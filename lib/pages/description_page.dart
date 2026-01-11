@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class DescriptionPage extends StatelessWidget {
   const DescriptionPage({super.key, required this.itemParam});
 
-  final ItemClassParameter itemParam;
+  final ItemClassParameter itemParam; // i'm stopped in 1h24min
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,28 @@ class DescriptionPage extends StatelessWidget {
                   itemParam.title,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: KDOUBLE100,
+                    fontSize: KDOUBLE20,
+                  ),
+                ),
+              ),
+              FittedBox(
+                child: Text(
+                  textAlign: TextAlign.justify,
+                  itemParam.description,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: KDOUBLE16,
+                  ),
+                ),
+              ),
+              SizedBox(height: KDOUBLE10),
+              FittedBox(
+                child: Text(
+                  textAlign: TextAlign.justify,
+                  itemParam.description,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: KDOUBLE16,
                   ),
                 ),
               ),

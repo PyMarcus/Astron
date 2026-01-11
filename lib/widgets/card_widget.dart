@@ -25,7 +25,7 @@ class CardWidget extends StatelessWidget {
             builder: (context) {
               final ItemClassParameter itemParam = ItemClassParameter(
                 title: title,
-                description: description,
+                description: BACON_IPSUM_CONSTANT,
                 imagePath: imagePath,
               );
               return DescriptionPage(itemParam: itemParam);
