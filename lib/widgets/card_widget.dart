@@ -1,5 +1,6 @@
 import 'package:astron/core/constants.dart';
 import 'package:astron/pages/description_page.dart';
+import 'package:astron/utils/item_class_parameter.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
@@ -22,7 +23,12 @@ class CardWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const DescriptionPage();
+              final ItemClassParameter itemParam = ItemClassParameter(
+                title: title,
+                description: description,
+                imagePath: imagePath,
+              );
+              return DescriptionPage(itemParam: itemParam);
             },
           ),
         );
@@ -33,7 +39,7 @@ class CardWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(imagePath),
+              Image.asset(imagePath, fit: BoxFit.cover),
 
               const SizedBox(height: KDOUBLE10),
 
