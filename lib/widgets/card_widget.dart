@@ -1,0 +1,57 @@
+import 'package:astron/core/constants.dart';
+import 'package:astron/pages/description_page.dart';
+import 'package:flutter/material.dart';
+
+class CardWidget extends StatelessWidget {
+  final String imagePath;
+  final String title;
+  final String description;
+
+  const CardWidget({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const DescriptionPage();
+            },
+          ),
+        );
+      },
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.all(KDOUBLE8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(imagePath),
+
+              const SizedBox(height: KDOUBLE10),
+
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: KDOUBLE22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: KDOUBLE8),
+
+              Text(description),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
