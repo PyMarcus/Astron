@@ -3,11 +3,11 @@ import 'package:astron/widget_tree.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Astron());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Astron extends StatelessWidget {
+  const Astron({super.key});
 
   @override
   Widget build(BuildContext context) {

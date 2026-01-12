@@ -23,7 +23,7 @@ class ProfilePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          isDarkModeNotifier.value = isDarkModeNotifier.value;
+          isDarkModeNotifier.value = !isDarkModeNotifier.value;
         },
         child: const Icon(Icons.dark_mode),
       ),
