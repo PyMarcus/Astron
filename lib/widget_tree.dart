@@ -1,4 +1,5 @@
 import 'package:astron/pages/home_page.dart';
+import 'package:astron/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class WidgetTree extends StatefulWidget {
@@ -10,10 +11,12 @@ class WidgetTree extends StatefulWidget {
 
 class _WidgetTreeState extends State<WidgetTree> {
   int currentPage = 0;
+  List<Widget> pages = [HomePage(), ProfilePage()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(),
+      body: pages.elementAt(currentPage),
       bottomNavigationBar: NavigationBar(
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
@@ -21,7 +24,9 @@ class _WidgetTreeState extends State<WidgetTree> {
         ],
         selectedIndex: currentPage,
         onDestinationSelected: (int value) {
-          setState(() {});
+          setState(() {
+            currentPage = value;
+          });
         },
       ),
     );
