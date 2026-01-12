@@ -1,4 +1,4 @@
-import 'package:astron/pages/home_page.dart';
+import 'package:astron/widget_tree.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const WidgetTree(),
     );
   }
 }
